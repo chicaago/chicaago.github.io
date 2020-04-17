@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+	
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Hey There</title>
+		<style>
+			
+		html,body {
+			margin:0;
+			background:#2C4CB5;
+			color:white;
+			width:100%;
+			height:100%;
+			display:flex;
+			flex-direction:column;
+			justify-content:center;
+			align-items:center;
+		}
+		
+		
+		
+		
+		
+		div {
+			font-size:35px;
+			
+		}
+		
+		div:nth-child(1) {
+			color:white;
+			margin-bottom:20px;
+		}
+		
+		div:nth-child(2) {
+			color:white;
+			font-size:45px;
+			margin-top:20px;
+		}
+		
+		</style>
+		</head>
+		
+	</html>
+	<body>
+		<div id="workout-name"></div>
+		<div id="time-remaining"></div>
+		
+		
+		
+		<script>
+			
+			
+			let foreverTime = new Date().getTime();
+			let firstTime = foreverTime;
+			let initialTime= new Date().getTime();
+			let secs=0;
+			let newtime;
+			let amount = 0;
+			
+			
+			
+			function countdown () {
+				let myTime=new Date().getTime() -1;
+				
+				if (secs%60<10){
+					document.getElementById("time-remaining").innerHTML=Math.floor(secs/60)+ ":0" + secs%60;
+				}else {
+					document.getElementById("time-remaining").innerHTML=Math.floor(secs/60)+ ":" + secs%60;
+				}
+				
+				if (myTime >= initialTime + 1000 && myTime <= newtime + amount ) {
+					console.log("KABOOM")
+					initialTime +=1000;
+					milliSecs -= 1000
+					secs -= 1;
+					
+					window.requestAnimationFrame(countdown);
+				
+				
+				}else if (myTime >= initialTime && myTime <= newtime + amount) {
+				
+					window.requestAnimationFrame(countdown);
+				}else {
+				console.log("BYEEEE")
+					window.requestAnimationFrame(counter);
+				}
+				
+				
+				
+				
+			}
+			
+			
+			
+			function counter () {
+				newtime = new Date().getTime();
+				
+				if (newtime < foreverTime + 180000){ //jump rope
+					
+					document.getElementById("workout-name").innerHTML="JUMP ROPE";
+					secs = 180;
+					milliSecs=180000;
+					amount=180000;
+					countdown();
+				}else if (newtime < foreverTime + 210000 ) { //rest
+					document.getElementById("workout-name").innerHTML="REST";
+					secs = 210-180;
+					milliSecs=210000-180000;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 240000 ) { //jumping jacks
+					document.getElementById("workout-name").innerHTML="JUMPING JACKS";
+					secs = 240-210;
+					milliSecs=240000-210000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 270000 ) { //shoeshine
+					document.getElementById("workout-name").innerHTML="SHOESHINE";
+					secs = 270-240;
+					milliSecs=270000-240000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 300000 ) { //jump twists
+					document.getElementById("workout-name").innerHTML="JUMP TWISTS";
+					secs = 300-270;
+					milliSecs=300000-270000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 330000 ) { //speed punch
+					document.getElementById("workout-name").innerHTML="SPEED PUNCH";
+					secs = 330-300;
+					milliSecs=330000-300000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 360000 ) { //shoulder taps
+					document.getElementById("workout-name").innerHTML="SHOULDER TAPS";
+					secs = 360-330;
+					milliSecs=360000-330000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 390000 ) { //pushups
+					document.getElementById("workout-name").innerHTML="PUSHUPS";
+					secs = 390-360;
+					milliSecs=390000-360000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 420000 ) { //right leg lunges
+					document.getElementById("workout-name").innerHTML="RIGHT LUNGES";
+					secs = 420-390;
+					milliSecs=420000-390000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 450000 ) { //left leg lunges
+					document.getElementById("workout-name").innerHTML="LEFT LUNGES";
+					secs = 450-420;
+					milliSecs=450000-420000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 480000 ) { //rest
+					document.getElementById("workout-name").innerHTML="REST";
+					secs = 480-450;
+					milliSecs=480000-450000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 780000 ) { //bag work freestyle 
+					document.getElementById("workout-name").innerHTML="BAG FREESTYLE";
+					secs = 780-480;
+					milliSecs=780000-480000;
+					amountStart= newtime;
+					amount=300000;
+					countdown();
+				}else if (newtime < foreverTime + 960000 ) { //bag work one pause one two slip slip three six roll four three
+					document.getElementById("workout-name").innerHTML="1,PAUSE,1,2,SLIP,SLIP,3,6,ROLL,4,3";
+					secs = 960-780;
+					milliSecs=960000-780000;
+					amountStart= newtime;
+					amount=180000;
+					countdown();
+				}else if (newtime < foreverTime + 990000 ) { //bag speed hooks
+					document.getElementById("workout-name").innerHTML="SPEED HOOKS";
+					secs = 990-960;
+					milliSecs=990000-960000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 1020000 ) { //rest
+					document.getElementById("workout-name").innerHTML="REST";
+					secs = 1020-990;
+					milliSecs=1020000-990000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 1050000 ) { //sit ups
+					document.getElementById("workout-name").innerHTML="SIT UPS";
+					secs = 1050-1020;
+					milliSecs=1050000-1020000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 1080000 ) { //leg raises
+					document.getElementById("workout-name").innerHTML="LEG RAISES";
+					secs = 1080-1050;
+					milliSecs=1080000-1050000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 1110000 ) { //bicycles
+					document.getElementById("workout-name").innerHTML="BICYCLES";
+					secs = 1110-1080;
+					milliSecs=1110000-1080000;
+					amountStart= newtime;
+					amount=30000;
+					countdown();
+				}else if (newtime < foreverTime + 1230000 ) { //plank
+					document.getElementById("workout-name").innerHTML="PLANK";
+					secs = 1230-1110;
+					milliSecs=1230000-1110000;
+					amountStart= newtime;
+					amount=120000;
+					countdown();
+				}
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+			window.requestAnimationFrame(counter);
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+	
+	<script>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+	
